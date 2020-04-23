@@ -189,5 +189,30 @@ namespace AlgorithmsDataStructures
                 node = node.next;
             }
         }
+
+        public static LinkedList CreateFromUnite(LinkedList first, LinkedList second)
+        {
+            if (first.count != second.count ||
+                first.count == 0 ||
+                second.count == 0)
+            {
+                return null;
+            }
+            
+            LinkedList uniteList = new LinkedList();
+
+            Node firstNode = first.head;
+            Node secondNode = second.head;
+            
+            while (firstNode != null && secondNode != null)
+            {
+                uniteList.AddInTail(new Node(firstNode.value + secondNode.value));
+
+                firstNode = firstNode.next;
+                secondNode = secondNode.next;
+            }
+
+            return uniteList;
+        }
     }
 }
