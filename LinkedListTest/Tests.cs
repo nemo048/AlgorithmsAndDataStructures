@@ -212,5 +212,18 @@ namespace LinkedListTest
             CountTest(1, BuildNodes(1));
             CountTest(3, BuildNodes(0, 0, 0));
         }
+
+        [Fact]
+        public void CreateFromUniteTest()
+        {
+            LinkedList first = GetLinkedList(BuildNodes(1, 2, 3));
+            LinkedList second = GetLinkedList(BuildNodes(2, 3, 6));
+
+            LinkedList unite = LinkedList.CreateFromUnite(first, second);
+            
+            Assert.Equal(3, unite.head.value);
+            Assert.Equal(9, unite.tail.value);
+            Assert.Equal(5, unite.head.next.value);
+        }
     }
 }
