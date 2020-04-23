@@ -167,6 +167,7 @@ namespace AlgorithmsDataStructures
             {
                 _nodeToInsert.next = head;
                 head = _nodeToInsert;
+                tail = _nodeToInsert;
                 return;
             }
 
@@ -177,12 +178,16 @@ namespace AlgorithmsDataStructures
             {
                 if (node == _nodeAfter)
                 {
-                    _nodeToInsert.next = node.next;
-                    if (node.next == null)
+                    if (_nodeAfter.next == null)
                     {
-                        tail = node.next;
+                        _nodeAfter.next = _nodeToInsert;
+                        tail = _nodeToInsert;
                     }
-                    node.next = _nodeToInsert;
+                    else
+                    {
+                        _nodeToInsert.next = _nodeAfter.next;
+                        _nodeAfter.next = _nodeToInsert;
+                    }
                     return;
                 }
 
