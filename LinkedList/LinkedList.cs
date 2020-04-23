@@ -79,7 +79,7 @@ namespace AlgorithmsDataStructures
             {
                 if (node.value == _value)
                 {
-                    if (parent == null)
+                    if (node == head)
                     {
                         head = node.next;
                         if (head == null)
@@ -93,7 +93,7 @@ namespace AlgorithmsDataStructures
                     }
 
                     count--;
-                    return true; // если узел был удалён
+                    return true;
                 }
 
                 parent = node;
@@ -112,7 +112,7 @@ namespace AlgorithmsDataStructures
             {
                 if (node.value == _value)
                 {
-                    if (parent == null)
+                    if (node == head)
                     {
                         head = node.next;
                         if (head == null)
@@ -125,6 +125,10 @@ namespace AlgorithmsDataStructures
                     else
                     {
                         parent.next = node.next;
+                        if (parent.next == null)
+                        {
+                            tail = parent;
+                        }
                     }
 
                     count--;

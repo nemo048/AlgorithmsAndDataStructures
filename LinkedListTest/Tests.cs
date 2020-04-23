@@ -45,37 +45,20 @@ namespace LinkedListTest
         private void RemoveTest(int valueToRemove, params Node[] nodes)
         {
             LinkedList list = GetLinkedList(nodes);
+            int nodesToRemove = nodes.Count(node => node.value == valueToRemove) >= 1 ?
+                1 : 0;
+            Node expectedHead = nodes.FirstOrDefault(node => node.value != valueToRemove) ??
+                nodes.Where(node => node.value == valueToRemove).Skip(1).FirstOrDefault();
+            Node expectedTail = expectedHead == null ? 
+                null : 
+                nodes.LastOrDefault();
 
-            if (nodes.Count(node => node.value == valueToRemove) >= 1)
-            {
-                Assert.True(list.Remove(valueToRemove));
-                Assert.Equal(nodes.Length - 1, list.Count());
-                if (nodes.Length - 1 == 0)
-                {
-                    Assert.Null(list.head);
-                    Assert.Null(list.tail);
-                }
-                else
-                {
-                    Assert.NotNull(list.head);
-                    Assert.NotNull(list.tail);
-                }
-            }
-            else
-            {
-                Assert.False(list.Remove(valueToRemove));
-                Assert.Equal(nodes.Length, list.Count());
-                if (nodes.Length == 0)
-                {
-                    Assert.Null(list.head);
-                    Assert.Null(list.tail);
-                }
-                else
-                {
-                    Assert.NotNull(list.head);
-                    Assert.NotNull(list.tail);
-                }
-            }
+            bool removeSuccess = list.Remove(valueToRemove);
+            
+            Assert.True(nodesToRemove == 0 ? !removeSuccess : removeSuccess);
+            Assert.Equal(nodes.Length - nodesToRemove, list.Count());
+            Assert.Same(expectedHead, list.head);
+            Assert.Same(expectedTail, list.tail);
         }
         
         private void RemoveAllTest(int valueToRemove, params Node[] nodes)
@@ -83,37 +66,15 @@ namespace LinkedListTest
             LinkedList list = GetLinkedList(nodes);
 
             int numberOfNodesToRemove = nodes.Count(node => node.value == valueToRemove);
+            Node expectedHead = nodes.FirstOrDefault(node => node.value != valueToRemove);
+            Node expectedTail = nodes.LastOrDefault(node => node.value != valueToRemove);
+            
             list.RemoveAll(valueToRemove);
 
-            if (numberOfNodesToRemove >= 1)
-            {
-                int expectedCount = nodes.Length - numberOfNodesToRemove;
-                Assert.Equal(expectedCount, list.Count());
-                if (expectedCount == 0)
-                {
-                    Assert.Null(list.head);
-                    Assert.Null(list.tail);
-                }
-                else
-                {
-                    Assert.NotNull(list.head);
-                    Assert.NotNull(list.tail);
-                }
-            }
-            else
-            {
-                Assert.Equal(nodes.Length, list.Count());
-                if (nodes.Length == 0)
-                {
-                    Assert.Null(list.head);
-                    Assert.Null(list.tail);
-                }
-                else
-                {
-                    Assert.NotNull(list.head);
-                    Assert.NotNull(list.tail);
-                }
-            }
+            Assert.Equal(nodes.Length - numberOfNodesToRemove, list.Count());
+            
+            Assert.Same(expectedHead, list.head);
+            Assert.Same(expectedTail, list.tail);
         }
 
         #endregion
