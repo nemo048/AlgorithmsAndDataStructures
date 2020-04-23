@@ -137,6 +137,23 @@ namespace LinkedListTest
             Assert.Same(expectedTail, list.tail);
         }
 
+        private void ClearTest(params Node[] nodes)
+        {
+            LinkedList list = GetLinkedList(nodes);
+            
+            list.Clear();
+            
+            Assert.Null(list.head);
+            Assert.Null(list.tail);
+        }
+
+        private void CountTest(int expectedLength, params Node[] nodes)
+        {
+            LinkedList list = GetLinkedList(nodes);
+            
+            Assert.Equal(expectedLength, list.Count());
+        }
+
         #endregion
 
         [Fact]
@@ -179,6 +196,21 @@ namespace LinkedListTest
             InsertAfterTest(new Node(0), 0, BuildNodes(1));
             InsertAfterTest(new Node(0), 2, BuildNodes(1, 2, 3));
             InsertAfterTest(new Node(0), 1, BuildNodes(1, 2, 3));
+        }
+
+        [Fact]
+        public void ClearTest()
+        {
+            ClearTest(BuildNodes());
+            ClearTest(BuildNodes(0, 1, 2));
+        }
+
+        [Fact]
+        public void CountTest()
+        {
+            CountTest(0, BuildNodes());
+            CountTest(1, BuildNodes(1));
+            CountTest(3, BuildNodes(0, 0, 0));
         }
     }
 }
