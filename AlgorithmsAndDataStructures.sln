@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListConsole", "Linked
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{9A2A137A-CAAF-4EA7-A117-63787D64F1B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListTest", "LinkedListTest\LinkedListTest.csproj", "{003743BF-939E-4F02-AF73-170B732D9397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsAndDataStructuresTests", "AlgorithmsAndDataStructuresTests\AlgorithmsAndDataStructuresTests.csproj", "{003743BF-939E-4F02-AF73-170B732D9397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
