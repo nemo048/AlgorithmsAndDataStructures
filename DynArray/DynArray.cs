@@ -34,7 +34,7 @@ namespace AlgorithmsDataStructures
         {
             if (index > count || index < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(index));
+                throw new ArgumentOutOfRangeException("index");
             }
             // ваш код
             return array[index];
@@ -55,7 +55,7 @@ namespace AlgorithmsDataStructures
             // ваш код
             if (index > count || index < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(index));
+                throw new ArgumentOutOfRangeException("index");
             }
 
             if (count + 1 >= capacity)
@@ -81,7 +81,7 @@ namespace AlgorithmsDataStructures
             // ваш код
             if (index > count || index < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(index));
+                throw new ArgumentOutOfRangeException("index");
             }
 
             count--;
