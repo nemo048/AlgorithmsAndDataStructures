@@ -108,5 +108,22 @@ namespace DynArrayTests
 
             Assert.Throws<ArgumentOutOfRangeException>(() => array.Remove(7));
         }
+
+        [Fact]
+        public void InsertIntoNotEmptyArrayWithoutChangeBufferSize()
+        {
+            //Некорректная вставка в непустой массив без изменения размера буфера
+            DynArray<int> array = new DynArray<int>();
+            
+            MakeAppend(array, 15);
+            
+            array.Insert(33, 15);
+            
+            Assert.Equal(16, array.count);
+            Assert.Equal(16, array.array.Length);
+            Assert.Equal(33, array.GetItem(15));
+            Assert.Throws<ArgumentOutOfRangeException>(() => array.GetItem(16));
+            Assert.Equal(16, array.capacity);
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace AlgorithmsDataStructures
 
         public T GetItem(int index)
         {
-            if (index > count || index < 0)
+            if (index >= capacity || index > count || index < 0)
             {
                 throw new ArgumentOutOfRangeException("index");
             }
@@ -58,7 +58,7 @@ namespace AlgorithmsDataStructures
                 throw new ArgumentOutOfRangeException("index");
             }
 
-            if (count + 1 >= capacity)
+            if (count + 1 > capacity)
             {
                 MakeArray(capacity * 2);
             }
