@@ -2,7 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{9A2A137A-CAAF-4EA7-A117-63787D64F1B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsAndDataStructuresTests", "AlgorithmsAndDataStructuresTests\AlgorithmsAndDataStructuresTests.csproj", "{003743BF-939E-4F02-AF73-170B732D9397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListTests", "LinkedListTests\LinkedListTests.csproj", "{003743BF-939E-4F02-AF73-170B732D9397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList2", "LinkedList2\LinkedList2.csproj", "{1A1C8289-1C8D-49E5-B56C-56966F632276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList2Tests", "LinkedList2Tests\LinkedList2Tests.csproj", "{1886F92F-F85B-411D-9A12-A8A37222C1D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,13 @@ Global
 		{003743BF-939E-4F02-AF73-170B732D9397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003743BF-939E-4F02-AF73-170B732D9397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003743BF-939E-4F02-AF73-170B732D9397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1C8289-1C8D-49E5-B56C-56966F632276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1C8289-1C8D-49E5-B56C-56966F632276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1C8289-1C8D-49E5-B56C-56966F632276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1C8289-1C8D-49E5-B56C-56966F632276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1886F92F-F85B-411D-9A12-A8A37222C1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1886F92F-F85B-411D-9A12-A8A37222C1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1886F92F-F85B-411D-9A12-A8A37222C1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1886F92F-F85B-411D-9A12-A8A37222C1D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
