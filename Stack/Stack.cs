@@ -5,48 +5,49 @@ namespace AlgorithmsDataStructures
 {
     public class Stack<T>
     {
-        private readonly DynArray<T> _array;
+        private LinkedList<T> _linkedList;
         
         public Stack()
         {
             // инициализация внутреннего хранилища стека
-            _array = new DynArray<T>();
+            _linkedList = new LinkedList<T>();
         } 
 
         public int Size() 
         {
             // размер текущего стека		  
-            return _array.count;
+            return _linkedList.Count;
         }
 
         public T Pop()
         {
             // ваш код
-            if (_array.count == 0)
+            if (_linkedList.Count == 0)
             {
                 return default(T); // null, если стек пустой
             }
 
-            T item = _array.GetItem(_array.count - 1);
-            _array.Remove(_array.count - 1);
+            T item = _linkedList.Last.Value;
+            _linkedList.RemoveLast();
+            
             return item;
         }
 	  
         public void Push(T val)
         {
             // ваш код
-            _array.Append(val);
+            _linkedList.AddLast(val);
         }
 
         public T Peek()
         {
             // ваш код
-            if (_array.count == 0)
+            if (_linkedList.Count == 0)
             {
                 return default(T); // null, если стек пустой
             }
 
-            return _array.GetItem(_array.count - 1);
+            return _linkedList.Last.Value;
         }
     }
 

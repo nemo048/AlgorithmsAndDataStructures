@@ -42,12 +42,6 @@
         <Compile Include="Stack.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\DynArray\DynArray.csproj">
-        <Project>{a640c5a4-35f9-46e1-877c-d401138ca3be}</Project>
-        <Name>DynArray</Name>
-      </ProjectReference>
-    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
