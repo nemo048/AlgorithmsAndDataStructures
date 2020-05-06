@@ -94,15 +94,18 @@ namespace OrderedListTests
             orderedListAsc.Add(50);
             orderedListAsc.Add(150);
             CheckCorrectOrder(orderedListAsc, true);
+            Assert.Equal(13, orderedListAsc.Count());
 
             OrderedList<int> orderedListDesc = CreateOrderedList(
                 false,
-                0, 9, 8, 1, 2, 3, 7, 6, 5, 4);
+                9, 8, 1, 2, 3, 7, 6, 5, 4);
             orderedListDesc.Add(101);
             orderedListDesc.Add(50);
-            orderedListAsc.Add(150);
+            orderedListDesc.Add(150);
+            orderedListDesc.Add(0);
             
             CheckCorrectOrder(orderedListDesc, false);
+            Assert.Equal(13, orderedListDesc.Count());
         }
 
         [Fact]

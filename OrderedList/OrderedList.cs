@@ -150,6 +150,17 @@ namespace AlgorithmsDataStructures
 
                     return true;
                 }
+                
+                if (next != null &&
+                    next.next == null &&
+                    Compare(next.value, node.value) >= 0)
+                {
+                    next.next = node;
+                    node.prev = next;
+                    tail = node;
+
+                    return true;
+                }
             }
 
             return false;
